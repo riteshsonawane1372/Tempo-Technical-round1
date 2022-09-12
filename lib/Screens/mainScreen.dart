@@ -34,6 +34,8 @@ class _MainScreenState extends State<MainScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    final double heightD = MediaQuery.of(context).size.height;
+    final double widthD = MediaQuery.of(context).size.width;
 
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -42,8 +44,7 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             // Upper Part
             Container(
-              padding: EdgeInsets.only(top: 50, left: 10, right: 10),
-
+              padding: EdgeInsets.only(top: heightD/17.38, left: widthD/41.2, right: widthD/41.2),
               child: Column(
                 children: [
                   // Top Bar
@@ -52,32 +53,32 @@ class _MainScreenState extends State<MainScreen> {
                     children: [
                       // Profile_Pic
                       Container(
-                        width: 50,
-                        height: 50,
+                        width: widthD/8.24,
+                        height: heightD/17.38,
                         decoration: BoxDecoration(
                           color: ProjectColors().profile_icon_color,
-                          borderRadius: BorderRadius.circular(18),
+                          borderRadius: BorderRadius.circular(widthD/22.88),
                         ),
                         child: Icon(Icons.person),
                       ),
                       // Contacts Text
                       Container(
-                        child: BoldText(text: 'Contacts',size: 22,),
+                        child: BoldText(text: 'Contacts',size: widthD/18,),
                       ),
                       // Edit Icons
                       editIcon(),
                     ],
                   ),
-                  SizedBox(height: 25,),
+                  SizedBox(height: heightD/34.76,),
                   // Search Bar
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Expanded(
                         child: Container(
-                          height: 40,
+                          height: heightD/21.72,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                            borderRadius: BorderRadius.circular(widthD/41.2),
                             color: Colors.grey.withOpacity(0.4),
                           ),
                           child: SearchBar(controller: _controller)
@@ -87,7 +88,7 @@ class _MainScreenState extends State<MainScreen> {
 
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: heightD/86.9,),
                   // List View Builder
                   Row(
                     children: [

@@ -77,6 +77,8 @@ Future <List<UserModel>> getMyContact() async{
 
   @override
   Widget build(BuildContext context) {
+    final double heightD = MediaQuery.of(context).size.height;
+    final double widthD = MediaQuery.of(context).size.width;
     return FutureBuilder(
         future: getMyContact(),
         builder: (context,data){
@@ -91,7 +93,7 @@ Future <List<UserModel>> getMyContact() async{
             return ScrollConfiguration(
               behavior: ScrollBehavior().copyWith(overscroll: false),
               child: AzListView(
-                indexBarItemHeight: 15,
+                indexBarItemHeight: heightD/55,
                 physics: ClampingScrollPhysics(),
                 data: Data,
                 itemCount: Data.length,
@@ -110,26 +112,26 @@ Future <List<UserModel>> getMyContact() async{
                       }));
                     },
                     child: Container(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(heightD/86.9),
                       child: Row(
                         children:[
                         // Profile Pic
                           Container(
-                            height: 60,
-                            width: 60,
+                            height: heightD/13,
+                            width: widthD/6.8,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage('${Data[index].NetworkImage}'),
                                     colorFilter: ColorFilter.mode(Colors.lightGreenAccent,BlendMode.color)
                                 ),
-                                borderRadius: BorderRadius.circular(15)
+                                borderRadius: BorderRadius.circular(widthD/27.46)
                             ),
                           ),
-                          SizedBox(width: 20,),
+                          SizedBox(width: widthD/20.6,),
                           // Name and Mobile Number + Border
                           Expanded(
                             child: Container(
-                              height: 60,
+                              height: heightD/13,
                               decoration: BoxDecoration(
                                   border: Border(
                                       bottom: BorderSide(color: Colors.grey.withOpacity(0.5))
@@ -140,7 +142,7 @@ Future <List<UserModel>> getMyContact() async{
                                 children: [
                                   MediumText(
                                     text: '${Data[index].FirstName} ${Data[index].LastName} ',
-                                    size: 20,color: Colors.black54,),
+                                    size: widthD/20.6,color: Colors.black54,),
                                   SizedBox(height: 5,),
                                   NumText(text: '(907)  ${Data[index].MobileNumber}'),
                                 ],

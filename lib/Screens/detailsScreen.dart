@@ -27,24 +27,28 @@ class DetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final double heightD = MediaQuery.of(context).size.height;
+    final double widthD = MediaQuery.of(context).size.width;
+
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Container(
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.only(top: 50, left: 20, right: 20),
+              padding: EdgeInsets.only(top: heightD/17.38, left: widthD/20.6, right: widthD/20.6),
               child: Column(
                 children: [
                   // Top Nav
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      PopButton(height: 50,width: 50,),
+                      PopButton(height: heightD/17.38,width: widthD/8.24,),
                       editIcon(),
                     ],
                   ),
-                  SizedBox(height: 25,),
+                  SizedBox(height: heightD/34.76,),
                   // Profile Name and Num
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -55,10 +59,10 @@ class DetailScreen extends StatelessWidget {
                           Hero(
                             tag:'Profile-Pic',
                             child: Container(
-                              width: 120,
-                              height: 120,
+                              width: widthD/3.43,
+                              height: heightD/7,
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
+                                  borderRadius: BorderRadius.circular(widthD/13.73),
                                   image: DecorationImage(
                                     image: NetworkImage('${ProfilePic}'),
                                     fit: BoxFit.cover
@@ -67,12 +71,12 @@ class DetailScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          SizedBox(height:15 ,),
+                          SizedBox(height:heightD/58 ,),
                           // Name
                           Container(
-                            child:MediumText(text:'${FirstName} ${LastName}' ,size: 20,),
+                            child:MediumText(text:'${FirstName} ${LastName}' ,size: widthD/20.6,),
                           ),
-                          SizedBox(height:5,),
+                          SizedBox(height:heightD/174,),
                           // Number
                           Container(
                             child: NumText(text: '(907)  ${MobileNumber}'),
@@ -82,7 +86,7 @@ class DetailScreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(height: 25,),
+                  SizedBox(height: heightD/34.76,),
                   // ButtonIcon
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -110,12 +114,12 @@ class DetailScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: heightD/43.45,),
             Row(
               children: [
                 Expanded(
                   child: Container(
-                    height: 35,
+                    height: heightD/24,
                     color: Colors.grey.withOpacity(0.2),
                   ),
                 )
@@ -123,28 +127,28 @@ class DetailScreen extends StatelessWidget {
             ),
             // Contact Details with Number
             Container(
-                padding: EdgeInsets.only(top: 30,left: 20,right: 20),
+                padding: EdgeInsets.only(top: heightD/28.96,left: widthD/20.6,right: widthD/20.6),
                 child: NumberDetails(ContactLocation: 'Mobile',ContactNumber: '(907) ${MobileNumber}',)
             ),
             Container(
-                padding: EdgeInsets.only(top: 30,left: 20,right: 20),
+                padding: EdgeInsets.only(top: heightD/28.96,left: widthD/20.6,right: widthD/20.6),
                 child: NumberDetails(ContactLocation: 'Home',ContactNumber: '(907) ${MobileNumber} ')
             ),
             Container(
-                padding: EdgeInsets.only(top: 30,left: 20,right: 20),
+                padding: EdgeInsets.only(top: heightD/28.96,left: widthD/20.6,right: widthD/20.6),
                 child: NumberDetails(ContactLocation: 'Office',ContactNumber: '${MobileNumber}')
             ),
 
             // Bottom Share qr Icons
             Container(
-              padding: EdgeInsets.only(top: 50,left: 20,right: 20),
+              padding: EdgeInsets.only(top: heightD/17.38,left: widthD/20.6,right: widthD/20.6),
               child:Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Column(
                     children: [
                       ButtonIcon(icon: Icons.share_location, color: ProjectColors().locaion_icon_color),
-                      SizedBox(height: 10,),
+                      SizedBox(height: heightD/87,),
                       NumText(text: 'share location')
 
                     ],
@@ -155,7 +159,7 @@ class DetailScreen extends StatelessWidget {
                         icon: Icons.qr_code_outlined,
                         color: ProjectColors().qr_code_color,
                         iconColor: Colors.black54,),
-                      SizedBox(height: 10,),
+                      SizedBox(height: heightD/87,),
                       NumText(text: 'Qr code')
                     ],
                   ),
@@ -169,7 +173,7 @@ class DetailScreen extends StatelessWidget {
 
                           child: ButtonIcon(icon: Icons.share_outlined,
                               color: ProjectColors().messger_color)),
-                      SizedBox(height: 10,),
+                      SizedBox(height: heightD/87,),
                       NumText(text: 'Share contact')
                     ],
                   )

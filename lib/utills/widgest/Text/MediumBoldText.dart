@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class MediumText extends StatelessWidget {
 
   final String text;
-  int size;
+  double size;
   Color color;
 
   MediumText({
     required this.text,
-    this.size =30,
+    this.size =412/13.73,
     this.color =Colors.black
 });
 

@@ -7,8 +7,8 @@ class PopButton extends StatelessWidget {
   double width;
 
   PopButton({
-    this.width=30,
-    this.height=30
+    this.width=412/13.7,
+    this.height=869/28.9
 });
 
   @override

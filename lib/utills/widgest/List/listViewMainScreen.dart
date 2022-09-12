@@ -23,6 +23,9 @@ class _ListViewMainState extends State<ListViewMain> {
   @override
   Widget build(BuildContext context) {
 
+    final double heightD = MediaQuery.of(context).size.height;
+    final double widthD = MediaQuery.of(context).size.width;
+
     return FutureBuilder(
             future: Data().getData(),
             builder:(context,data){
@@ -31,7 +34,7 @@ class _ListViewMainState extends State<ListViewMain> {
                // Data To show Of type UserModel
                var Data = data.data as List<UserModel>;
                return Container(
-                 height: 220,
+                 height: heightD/3.95,
                  child: ScrollConfiguration(
                    behavior: const ScrollBehavior().copyWith(overscroll: false),
                    child: ListView.builder(
@@ -39,16 +42,16 @@ class _ListViewMainState extends State<ListViewMain> {
                        scrollDirection: Axis.horizontal,
                        itemBuilder: (context,index){
                          return Padding(
-                             padding: const EdgeInsets.all(8),
+                             padding: const EdgeInsets.all(5),
                              child: Column(
                                children: [
                                  Row(
                                    children: [
                                      Container(
-                                       width: 120,
-                                       height: 120,
+                                       width: widthD/3.8,
+                                       height: heightD/7.2,
                                        decoration: BoxDecoration(
-                                           borderRadius: BorderRadius.circular(25),
+                                           borderRadius: BorderRadius.circular(widthD/16.48),
                                            color: Colors.black,
                                            image: DecorationImage(
                                              image: NetworkImage('${Data[index].NetworkImage}',),
@@ -65,12 +68,12 @@ class _ListViewMainState extends State<ListViewMain> {
                                    crossAxisAlignment: CrossAxisAlignment.center,
                                    children: [
                                      Container(
-                                         width:120,
-                                         height: 40,
+                                         width:widthD/3.43,
+                                         height: heightD/20,
                                          child: Center(
                                              child:OverFlowText(
                                                text: '${Data[index].FirstName}'" "+'${Data[index].LastName}',
-                                               size:13,)
+                                               size:widthD/31.69,)
                                          ))
                                    ],
                                  ),
@@ -78,7 +81,7 @@ class _ListViewMainState extends State<ListViewMain> {
                                    children: [
                                      Container(
                                          child: Center(
-                                             child: MediumText(text: '${random()}'+" "'Mins ago',size: 12,)
+                                             child: MediumText(text: '${random()}'+" "'Mins ago',size: widthD/34.3,)
                                          )
                                      )
                                    ],

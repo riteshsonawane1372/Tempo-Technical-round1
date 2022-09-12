@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class NumText extends StatelessWidget {
   final String text;
-  int size;
+  double size;
   NumText({
     required this.text,
-    this.size=12
+    this.size=412/34.3
 });
 
   @override
