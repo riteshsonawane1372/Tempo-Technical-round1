@@ -17,11 +17,11 @@ class ButtonIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Icon(icon,color: iconColor,),
-      width: 50,
-      height: 50,
+      width: 412/7.92,
+      height: 869/17.38,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(15)
+        borderRadius: BorderRadius.circular(412/27.46)
       ),
     );
   }

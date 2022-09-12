@@ -14,6 +14,8 @@ class NumberDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double heightD = MediaQuery.of(context).size.height;
+    final double widthD = MediaQuery.of(context).size.width;
     return Container(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -23,12 +25,12 @@ class NumberDetails extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  NumText(text: '${ContactLocation}',size: 15,),
+                  NumText(text: '${ContactLocation}',size: widthD/27.46,),
                 ],
               ),
               Row(
                 children: [
-                  MediumText(text: '${ContactNumber}',size: 18,)
+                  MediumText(text: '${ContactNumber}',size: widthD/23,)
                 ],
               ),
             ],

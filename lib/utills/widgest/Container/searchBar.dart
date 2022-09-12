@@ -15,8 +15,13 @@ class SearchBar extends StatefulWidget {
 }
 
 class _SearchBarState extends State<SearchBar> {
+
   @override
   Widget build(BuildContext context) {
+
+    final double heightD = MediaQuery.of(context).size.height;
+    final double widthD = MediaQuery.of(context).size.width;
+
     return TextField(
       controller: widget.controller,
       decoration: InputDecoration(
@@ -30,7 +35,7 @@ class _SearchBarState extends State<SearchBar> {
           focusedBorder: InputBorder.none,
           enabledBorder: InputBorder.none,
           hintText: 'Search',
-          hintStyle: TextStyle(fontSize: 15),
+          hintStyle: TextStyle(fontSize: widthD/27.46),
           prefixIcon: InkWell(
               onTap: (){
                 FocusScope.of(context).unfocus();

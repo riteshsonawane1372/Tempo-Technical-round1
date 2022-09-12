@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 class OverFlowText extends StatelessWidget {
 
   final  String text;
-  int size;
+  double size;
 
   OverFlowText({
     required this.text,
-    this.size=20
+    this.size=412/20.6
 });
 
   @override

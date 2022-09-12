@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class BoldText extends StatelessWidget {
 
   final String text;
-  int  size ;
+  double  size ;
   Color color;
 
   BoldText({
     required this.text,
-    this.size=20,
+    this.size=412/20.6,
     this.color=Colors.black
 });
 
